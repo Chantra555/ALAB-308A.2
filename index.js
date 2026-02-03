@@ -44,7 +44,7 @@ const newRobin = new Character("NewRobin")
 
 console.log(newRobin.roll());
 
-// note - better way to have done this instead of following exercise instruction was turn const Robin into class and extend it 
+// note: instructions not clear 
 
 //Part 3 Class Feautures 
 class Adventurer extends Character {
@@ -108,3 +108,32 @@ class AdventurerFactory {
 
 const healers = new AdventurerFactory("Healer");
 const robin = healers.generate("Robin");
+
+// Part 6 Developing Skills 
+class Character extends C{
+    duel ();{
+        console.log(`${this.name} your damage per hit is: `);
+        super.roll();
+    }
+        
+    duel(opponent) {
+        console.log(`Duel: ${this.name} vs ${opponent.name}`);
+        while (this.health > 50 && opponent.health > 50) {
+            const myRoll = Math.floor(Math.random() * 20) + 1;
+            const opponentRoll = Math.floor(Math.random() * 20) + 1;
+            console.log(`${this.name} rolled ${myRoll}, ${opponent.name} rolled ${opponentRoll}.`);
+            if (myRoll < opponentRoll) {
+                this.health -= 1;
+                console.log(`${this.name} loses 1 health, now at ${this.health}.`);
+            } else if (opponentRoll < myRoll) {
+                opponent.health -= 1;
+                console.log(`${opponent.name} loses 1 health, now at ${opponent.health}.`);
+            }
+        }
+        const winner = this.health > 50 ? this.name : opponent.name;
+        console.log(`${winner} wins the duel!`);
+    }
+}
+
+
+//Part 7: Adventure Forth -- it seems this section is optional so I'm opting not to 
