@@ -79,3 +79,11 @@ class companion extends Adventurer{
 const robin = new Adventurer("Robin");
 const leo = new companion("Leo");
 const frank = new companion("Frank")
+
+//Part 4 Class Uniforms 
+
+class Character{
+    static MAX_HEALTH = 100; 
+    static ROLES = ["Fighter","Healer", "Wizard"]; 
+
+}
